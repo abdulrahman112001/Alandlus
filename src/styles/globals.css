@@ -14,3 +14,7 @@ body {
     box-sizing: border-box;
 }
 
+
+.mui-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+    left: auto;
+}

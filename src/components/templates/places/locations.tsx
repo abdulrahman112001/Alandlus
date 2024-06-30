@@ -1,40 +1,62 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-//@ts-ignore
 
 // Fix for missing marker icons
+//@ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
   shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 });
 
-const locations = [
-  { position: [33.3152, 44.3661], text: "Baghdad, Iraq. A city with a rich history." },
-  { position: [30.0444, 31.2357], text: "Cairo, Egypt. The capital of Egypt." },
-  { position: [24.7136, 46.6753], text: "Riyadh, Saudi Arabia. The capital of Saudi Arabia." },
-];
+interface LocationData {
+  position: [number, number];
+  text: string;
+}
 
-function Locations() {
+interface LocationsProps {
+  data?: { point_array: [number, number]; name: string }[];
+}
+
+const Locations: React.FC<LocationsProps> = ({ data }) => {
+  const mapRef = useRef<L.Map>(null);
+
+  useEffect(() => {
+    if (data && data.length > 0 && mapRef.current) {
+      const firstLocation = data[0].point_array;
+      mapRef.current.flyTo(firstLocation, 10);
+    }
+  }, [data]);
+
+  if (!data || data.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const locations: LocationData[] = data
+    .filter(item => item?.point_array && item?.name)
+    .map(item => ({
+      position: item?.point_array,
+      text: item?.name
+    }));
+
   return (
     <div>
       <MapContainer
-        center={[33.3152, 44.3661]} // مركز الخريطة يمكن أن يكون في أي مكان مناسب
+        center={[33.3152, 44.3661]}
         zoom={5}
         scrollWheelZoom={true}
         style={{ height: "100vh", width: "100%" }}
+        //@ts-ignore
+        whenCreated={(mapInstance) => { mapRef.current = mapInstance; }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {locations.map((location, idx) => (
-//@ts-ignore
-
           <Marker key={idx} position={location.position}>
             <Popup>{location.text}</Popup>
           </Marker>
@@ -42,6 +64,6 @@ function Locations() {
       </MapContainer>
     </div>
   );
-}
+};
 
 export default Locations;

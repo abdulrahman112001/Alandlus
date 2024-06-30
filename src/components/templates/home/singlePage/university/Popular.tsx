@@ -8,7 +8,7 @@ export default function Popular() {
         <h2 className="text-2xl font-bold text-[#0F2239]"> خدماتنا</h2>
         <div className="mt-2 border-b-4 border-blue-500 w-20 mx-auto"></div>
       </div>
-      <div className=" container mx-auto flex flex-col md:flex-row items-center px-[12px] gap-6">
+      <div className=" container mx-auto flex flex-col md:flex-row items-center md:px-[12px] gap-6">
         <SinglePopular
           img={`/assets/image4.jpg`}
           title="مقاعد طلابية"

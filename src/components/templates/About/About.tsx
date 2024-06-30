@@ -18,7 +18,13 @@ function About() {
           />
         </div>
         <div className="mt-5">
-          <p >{links?.aboutUs}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                //@ts-ignore
+                links.aboutUs,
+            }}
+          ></p>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
           }}
         >
           <div className="overlay h-full bg-[#00000075] absolute z-1 top-0  left-0 w-full"></div>
-          <div className="absolute left-[45%] top-1/2">
+          <div className="absolute  md:left-[45%] top-1/2">
             <h1 className="text-3xl font-bold mb-6 text-white ">
               السياسة الخصوصية
             </h1>

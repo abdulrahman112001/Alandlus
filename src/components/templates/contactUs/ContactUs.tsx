@@ -48,8 +48,8 @@ function ContactUs() {
 
   return (
     <div>
-      <div className="grid grid-cols-12 mx-[100px] mt-10">
-        <div className="col-span-6">
+      <div className="grid grid-cols-12 mx-10 md:mx-[100px] mt-10">
+        <div className="col-span-12 md:col-span-6">
           <div>
             <form onSubmit={handleSubmit}>
               <h2>تواصل معنا ...</h2>
@@ -107,7 +107,7 @@ function ContactUs() {
             </form>
           </div>
         </div>
-        <div className="col-span-6">
+        <div className="col-span-12 md:col-span-6">
           <div className="flex justify-center">
             <Image
               alt=""

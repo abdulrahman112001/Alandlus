@@ -25,9 +25,9 @@ export default function CarouselCategory() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="flex flex-col items-center  mt-[350px]">
+              {/* <div className="flex flex-col items-center  mt-[350px]">
                 <MainButton href="" text="معرفة اكثر" className="text-white " />
-              </div>
+              </div> */}
             </div>
           </SwiperSlide>
         ))}

@@ -3,12 +3,12 @@ import { FaGooglePlay, FaApple } from "react-icons/fa";
 
 function DownloadApp() {
   return (
-    <div className="p-8 mx-[50px] text-center">
+    <div className="p-8 md:mx-[50px] text-center">
       <h3 className="text-2xl font-bold text-[#0F2239] mb-4">تحميل تطبيقنا</h3>
       <p className="text-center text-gray-600 mb-4">
         حمل تطبيقنا للحصول على تجربة أفضل وخدمات متميزة
       </p>
-      <div className="flex justify-center gap-6">
+      <div className="flex justify-center gap-3 md:gap-6">
         <a
           href="https://play.google.com/store"
           target="_blank"

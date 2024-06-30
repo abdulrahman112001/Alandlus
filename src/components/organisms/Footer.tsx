@@ -23,8 +23,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0F1B31] text-[white] mt-[100px]">
- 
-
       <div className="center mt-[80px] mb-[40px] px-[15px] pt-10">
         <div className="container mx-auto flex flex-col sm:flex-row flex-wrap gap-6">
           <div className="box sm:w-[50%] lg:w-[25%]">
@@ -76,7 +74,7 @@ export default function Footer() {
             <ul className="flex flex-col">
               <FooterLink href="/">الرئيسية</FooterLink>
               <FooterLink href="/aboutUs">من نحن</FooterLink>
-              <FooterLink href="/places">اماكننا</FooterLink>
+              <FooterLink href="/places">اعمالنا</FooterLink>
               <FooterLink href="/contactUs">تواصل معنا</FooterLink>
             </ul>
           </div>

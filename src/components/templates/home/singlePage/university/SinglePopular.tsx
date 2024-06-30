@@ -10,7 +10,7 @@ export default function SinglePopular({
 }: any) {
   return (
     <div
-      className={`relative single-popular lg:w-[50%] p-[60px] px-[80px] rounded-[20px]  bg-[Popular1] overflow-hidden h-[400px] relative`}
+      className={` single-popular w-[90%] md:w-[50%] p-[60px] px-[80px] rounded-[20px]  bg-[Popular1] overflow-hidden h-[400px] relative`}
       style={{
         backgroundImage: `url('${img}')`,
         backgroundSize: "cover",
@@ -23,11 +23,11 @@ export default function SinglePopular({
         <MainHeading className="text-white !text-[30px] w-[350px]">
           {heading}
         </MainHeading>
-        <MainButton
+        {/* <MainButton
           href={buttonHref}
           text="JOIN WITH US"
           className="bg-white "
-        />
+        /> */}
       </div>
     </div>
   );

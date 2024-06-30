@@ -66,22 +66,15 @@ const Navbar: React.FC = () => {
               </Link> */}
             </ul>
           </div>
-          {/* <div className="login md:flex items-center gap-2 hidden">
-            <span>
-              <FaRegUser />
-            </span>
-            <Link href=''>
-              Login / Register
-            </Link>
-          </div> */}
+         
         </div>
         <span className="absolute bg-[#0D5EF4] left-0 top-0 h-full w-[100%] xl:w-[85%] z-[1] rounded-br-[0px] xl:rounded-br-[50px]"></span>
       </div>
 
-      <div className="sticky-wrapper container mx-auto bg-[#fff] shadow-sm flex items-center justify-between gap-[30px]">
-        <div className="block md:hidden">
+        <div className="flex justify-end md:hidden w-full">
           <MainDrawer />
         </div>
+      <div className="sticky-wrapper container mx-auto bg-[#fff] shadow-sm flex items-center justify-between gap-[30px]">
         <ul className="hidden md:flex gap-4">
           <Link href="/" passHref>
             <li
@@ -98,7 +91,7 @@ const Navbar: React.FC = () => {
                 router.pathname === "/places" ? "text-blue-500" : ""
               }`}
             >
-              اماكننا
+              اعمالنا
             </li>
           </Link>
           <Link href="/aboutUs" passHref>
@@ -140,7 +133,7 @@ const Navbar: React.FC = () => {
         </ul>
         <div className="flex items-center gap-5 text-white">
           <div className="hidden lg:flex">
-            <MainButton href="" text="تواصل معنا" />
+            <MainButton href="/contactUs" text="تواصل معنا" />
           </div>
         </div>
       </div>
